@@ -20,6 +20,9 @@ dependencyResolutionManagement {
     }
 }
 
+// Fixes an "Unable to make progress running work" error when rebuilding the project
+gradle.startParameter.excludedTaskNames.addAll(listOf(":build-logic:convention:testClasses"))
+
 rootProject.name = "Runique"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
